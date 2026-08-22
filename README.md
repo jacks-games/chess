@@ -1,69 +1,111 @@
 # ♟️ Jackies Schach
 
-### Real chess, with a coach who shows you what is safe. ⭐
+**Full FIDE rules with a coach that marks the safe squares (German)**
 
-# [▶ PLAY](https://jacks-games.github.io/chess/)
+[![Play it](https://img.shields.io/badge/▶_play-jacks--games.github.io/chess-brightgreen?style=for-the-badge)](https://jacks-games.github.io/chess/)
 
-![Jackies Schach: a chess board with a pawn selected and two green dots showing where it can go](screenshot.png)
+![One HTML file, no build step](https://img.shields.io/badge/one_HTML_file-no_build_step-blue)
+![No dependencies](https://img.shields.io/badge/dependencies-none-blue)
+![Ages 5 to 7](https://img.shields.io/badge/ages-5--7-orange)
+![No accounts, no tracking](https://img.shields.io/badge/no_accounts-no_tracking-lightgrey)
 
-> 🇩🇪 This one speaks **German** — the others are in English.
+![Jackies Schach: a chess board with a pawn selected and green dots marking its safe moves](screenshot.png)
+
+> 🇩🇪 **This game's interface is in German**, unlike the other four. It was built first, for the
+> same child, at home rather than for school.
+
+## What this is
+
+A full chess implementation with a **coach layer aimed at a beginner who cannot yet see danger**.
+All the real rules are enforced — legal moves only, check, checkmate, stalemate, castling, en
+passant, promotion — and the engine runs a self-test of its own rule set on load, shown as the
+*Regeltest* badge.
+
+What makes it a children's game is the annotation. Before committing to a move, the board marks
+every destination square as safe or attacked, and the coach offers up to three ranked ideas
+together with the opponent's likely reply. The habit it is building is "what happens next",
+which is the step most beginners skip.
 
 ## 🎮 How to play
 
 ### 1️⃣ &nbsp; Tap one of your pieces ♙
-Only your own pieces light up.
+Only your own pieces respond.
 
-### 2️⃣ &nbsp; Look at the dots
+### 2️⃣ &nbsp; Read the dots
+
 | | |
 |---|---|
-| 🟢 | Safe square — nobody can take you there |
-| 🔴 | Careful! Something can take you there |
-| 🟡 | The coach thinks this is a good move |
+| 🟢 | Safe square — nothing can capture you there |
+| 🔴 | Dangerous — something is attacking that square |
+| 🟡 | A move the coach likes |
 
 ### 3️⃣ &nbsp; Tap where you want to go
-Your piece moves. Then it is the other side's turn.
+The piece moves and the opponent replies.
 
-### ⭐ &nbsp; Collect XP
-Good moves earn stars. Win games in a row and your **streak** 🔥 grows.
+### ⭐ &nbsp; XP and streaks
+Good moves earn stars; consecutive wins build a streak 🔥 and a rank.
 
 ## 🧑‍🏫 The coach
 
-Before you move, the coach shows up to three ideas with stars — ⭐ good, ⭐⭐ better, ⭐⭐⭐ best — and what the other side might do next. You can guess first, then look.
+Up to three suggestions, ranked ⭐ / ⭐⭐ / ⭐⭐⭐, each with the reply the opponent is most likely
+to make. A child can guess first and then check — the suggestions can also be turned off
+entirely.
 
-## ⚙️ You can change
+## ⚙️ Settings
 
 | | |
 |---|---|
-| 💪 **Stärke** | how strong the opponent is |
-| 💡 **Tipps** | coach ideas on or off |
-| 🐢 **Gegnerzug** | how fast the other side moves |
+| 💪 **Stärke** | opponent strength |
+| 💡 **Tipps** | coach suggestions on or off |
+| 🐢 **Gegnerzug** | how quickly the opponent replies |
 
-## 🎯 What you get better at
+## 🎯 What it practises
 
-- 🧠 &nbsp; Thinking one move ahead
-- 👀 &nbsp; Spotting what is in danger
-- ♟️ &nbsp; All the real rules — castling, en passant, promotion
+- 🧠 &nbsp; Looking one move ahead
+- 👀 &nbsp; Noticing what is under attack before moving
+- ♟️ &nbsp; The complete rule set, including the parts beginners' apps usually skip
 
-## 🎈 More games for Jack
+## ⚙️ Notable details
 
-[📖 Words](https://github.com/jacks-games/words) · [🥅 Match](https://github.com/jacks-games/match) · [✏️ Letters](https://github.com/jacks-games/letters) · [🔢 Numbers](https://github.com/jacks-games/numbers) · [♟️ Chess](https://github.com/jacks-games/chess)
+- Threefold repetition and the fifty-move rule can be **claimed**; fivefold repetition and the
+  seventy-five-move rule end the game automatically.
+- Over-the-board tournament conventions — touch-move, clocks, an arbiter — are deliberately not
+  modelled.
+- XP, best score and streak are kept in `localStorage`.
 
-👉 &nbsp; All of them together: **[jackbenn.ing](https://jackbenn.ing)**
+## 🎈 The other games
 
----
+| Game | What it is | |
+|---|---|---|
+| 📖 [**Jack's Words**](https://github.com/jacks-games/words) | Hear a word, build it from letter tiles, then read it in a sentence | [▶ play](https://jacks-games.github.io/words/) |
+| 🥅 [**Jack's Match**](https://github.com/jacks-games/match) | Tell real words from decodable nonsense words, then spell by ear | [▶ play](https://jacks-games.github.io/match/) |
+| ✏️ [**Jack's Letters**](https://github.com/jacks-games/letters) | Finger-trace all 26 lowercase letters in the correct stroke order | [▶ play](https://jacks-games.github.io/letters/) |
+| 🔢 [**Jack's Numbers**](https://github.com/jacks-games/numbers) | Count, add and subtract with footballs — to 10, then to 20 | [▶ play](https://jacks-games.github.io/numbers/) |
+| ♟️ [**Jackies Schach**](https://github.com/jacks-games/chess) | Full FIDE rules with a coach that marks the safe squares (German) | [▶ play](https://jacks-games.github.io/chess/)  👈 **this one** |
 
-<details>
-<summary><b>For grown-ups</b> — what it enforces</summary>
+All five on one start page: **[jackbenn.ing](https://jackbenn.ing)**
 
-Full FIDE move legality: legal moves only, check, checkmate, stalemate, castling, en passant and promotion are all validated, and the engine self-tests its rule set on load (the *Regeltest* badge). Threefold repetition and the fifty-move rule can be claimed; fivefold repetition and the seventy-five-move rule end the game automatically. Over-the-board tournament rules — touch-move, clocks, an arbiter — are not part of it.
+## 🛠 Built like this
 
-The danger highlighting is the teaching device: before committing, a child can see which destination squares are attacked. Coach suggestions are ranked and paired with the likely reply, so the habit being built is "what happens next", not "what looks nice".
+Every game in this organisation is **one self-contained `index.html`** — no build step, no
+framework, no package manager, no analytics, and no network calls once the page has loaded.
+That is a deliberate constraint: a game a child depends on should still work in five years,
+and a parent should be able to read the whole thing in one sitting.
 
-One self-contained `index.html`, no build step, no dependencies, no accounts, no tracking. XP and streaks live in `localStorage`.
+- **Speech** — the browser's Web Speech API, preferring a British English voice. It always
+  waits for a tap first, because Chrome and iOS block audio without user activation.
+- **Progress** — kept in `localStorage` on the device. Nothing is collected, sent or stored
+  anywhere else.
+- **Made for** an iPad mini in either orientation: finger-sized targets, no hover-only
+  interactions, `prefers-reduced-motion` respected.
 
-Source of truth for all of Jack's games is the [jackbenn.ing repo](https://github.com/google814/Jack); this repo is a copy so the game has its own page and link.
+Run it locally:
 
 ```bash
 python3 -m http.server 8000
 ```
-</details>
+
+The start page at [jackbenn.ing](https://jackbenn.ing) is built from
+[google814/Jack](https://github.com/google814/Jack), which is the source of truth. The repos
+in this organisation are copies kept in step by `tools/sync-game-repos.sh` in that repo, so
+each game also has its own page and its own link.
