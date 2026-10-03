@@ -5,7 +5,7 @@
 [![Play it](https://img.shields.io/badge/▶_play-jacks--games.github.io/chess-brightgreen?style=for-the-badge)](https://jacks-games.github.io/chess/)
 
 ![One HTML file, no build step](https://img.shields.io/badge/one_HTML_file-no_build_step-blue)
-![No dependencies](https://img.shields.io/badge/dependencies-none-blue)
+![One dependency: chess.js](https://img.shields.io/badge/dependencies-chess.js-blue)
 ![Ages 5 to 7](https://img.shields.io/badge/ages-5--7-orange)
 ![No accounts, no tracking](https://img.shields.io/badge/no_accounts-no_tracking-lightgrey)
 
@@ -93,7 +93,8 @@ All ten on one start page: **[jackbenn.ing](https://jackbenn.ing)** — newest f
 ## 🛠 Built like this
 
 Every game in this organisation is **one self-contained `index.html`** — no build step, no
-framework, no package manager, no analytics, and no network calls beyond its own voice clips.
+framework, no package manager, no analytics, and no network calls beyond its own voice clips (chess also loads its rules engine, chess.js, from
+jsDelivr, and Sight Words its font from Google Fonts).
 That is a deliberate constraint: a game a child depends on should still work in five years,
 and a parent should be able to read the whole thing in one sitting.
 
